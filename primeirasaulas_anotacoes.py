@@ -576,3 +576,7 @@
 # print(novo_digito)
 
 # print('Etaniel' if True else 'Gabrieli' if False else 'Octávio')
+# ----------------------------------------------------------------
+# Return
+variavel = print('Luiz')
+print(variavel) # Vai retornar None, pois print não guarda nenhum valor
