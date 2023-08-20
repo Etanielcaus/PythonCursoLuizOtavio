@@ -578,5 +578,25 @@
 # print('Etaniel' if True else 'Gabrieli' if False else 'Octávio')
 # ----------------------------------------------------------------
 # Return
-variavel = print('Luiz')
-print(variavel) # Vai retornar None, pois print não guarda nenhum valor
+# variavel = print('Luiz')
+# print(variavel) # Vai retornar None, pois print não guarda nenhum valor
+# ----------------------------------------------------------------
+# Tupla (Tuple):
+# Uma tupla é uma coleção ordenada e imutável de elementos. Ela é definida utilizando parênteses e pode conter diversos tipos de dados.
+# Exemplo de tupla:
+# minha_tupla = (1, 2, 3, 'quatro', 5.0)
+
+# Lista (List):
+# Uma lista é uma coleção ordenada e mutável de elementos. Ela é definida utilizando colchetes e pode ser modificada (adicionar, remover elementos) após a criação.
+# Exemplo de lista:
+# minha_lista = [10, 20, 30, 'trinta']
+
+# Dicionário (Dictionary):
+# Um dicionário é uma coleção de pares chave-valor, onde cada valor é associado a uma chave única. É definido utilizando chaves e dois pontos para separar a chave do valor.
+# Exemplo de dicionário:
+# meu_dicionario = {'nome': 'João', 'idade': 25, 'cidade': 'São Paulo'}
+
+# Conjunto (Set):
+# Um conjunto é uma coleção não ordenada de elementos únicos. Ele é definido utilizando chaves ou a função set().
+# Exemplo de conjunto:
+# meu_conjunto = {1, 2, 3, 4, 5}
