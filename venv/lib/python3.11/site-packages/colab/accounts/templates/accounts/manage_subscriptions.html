@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load i18n gravatar %}
+
+{% block main-content %}
+
+  <h2>{% blocktrans %}Group Subscriptions{% endblocktrans %}</h2>
+  <h3>{% gravatar user_.email 50 %} {{ user_.get_full_name }} ({{ user_.username }})</h3>
+  <br>
+
+  <form method='post'>
+    {% csrf_token %}
+
+    <div class="row">
+      {% for email, lists in membership.items %}
+      <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{ email }}</h3>
+          </div>
+          <div class="panel-body">
+            {% for list, checked in lists %}
+              <div class="checkbox" title="{{ list.description }}">
+                <label>
+                  <input name="{{ email }}" value="{{ list.listname }}" type="checkbox" {% if checked %}checked{% endif%}>{{ list.listname }}</input>
+                </label>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="row">
+      <div class="text-center">
+        <button class="btn btn-lg btn-primary" type="submit">{% trans 'Update subscriptions' %}</button>
+      </div>
+    </div>
+
+  </form>
+
+ <br><br>
+ <br><br>
+
+{% endblock %}

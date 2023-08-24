@@ -1,0 +1,82 @@
+Metadata-Version: 2.1
+Name: django-revproxy
+Version: 0.10.0
+Summary: Yet another Django reverse proxy application.
+Home-page: https://github.com/TracyWebTech/django-revproxy
+Author: Sergio Oliveira
+Author-email: sergio@tracy.com.br
+License: MPL v2.0
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: Proxy Servers
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries
+Requires-Dist: django (>=1.7)
+Requires-Dist: urllib3 (>=1.12)
+Provides-Extra: diazo
+Requires-Dist: diazo (>=1.0.5) ; extra == 'diazo'
+Requires-Dist: lxml (>=3.4) ; extra == 'diazo'
+
+
+Welcome to django-revproxy
+==========================
+
+.. image:: https://travis-ci.org/TracyWebTech/django-revproxy.svg?branch=master
+       :target: https://travis-ci.org/TracyWebTech/django-revproxy
+
+.. image:: https://coveralls.io/repos/TracyWebTech/django-revproxy/badge.svg
+       :target: https://coveralls.io/r/TracyWebTech/django-revproxy?branch=master
+
+.. image:: https://landscape.io/github/TracyWebTech/django-revproxy/master/landscape.svg?style=flat
+      :target: https://landscape.io/github/TracyWebTech/django-revproxy/master
+
+
+A simple reverse proxy using Django. It allows to use Django as a
+reverse Proxy to HTTP requests. It also allows to use Django as an
+authentication Proxy.
+
+Documentation available at http://django-revproxy.readthedocs.org/
+
+
+Features
+---------
+
+* Proxies all HTTP methods: HEAD, GET, POST, PUT, DELETE, OPTIONS, TRACE, CONNECT and PATCH
+* Copy all http headers sent from the client to the proxied server
+* Copy all http headers sent from the proxied server to the client (except `hop-by-hop <http://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html#sec13.5.1>`_)
+* Basic URL rewrite
+* Sets the http header REQUEST_USER if the user is logged in Django
+* Handles redirects
+* Few external dependencies
+* Apply XSLT transformation in the response (requires Diazo)
+
+
+Dependencies
+------------
+
+* django >= 1.8
+* urllib3 >= 1.12
+* diazo >= 1.0.5 (optional)
+* lxml >= 3.4, < 3.5 (optional, but diazo dependency)
+
+
+Install
+--------
+
+``pip install django-revproxy``
+
+
+

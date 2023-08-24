@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n widgets_tag%}
+
+{% block html %}
+  {% import_widgets 'dashboard' %}
+  {{block.super}}
+{% endblock %}
+
+{% block pagetitle %}Home{% endblock %}
+
+{% block head_js %}
+  {% for widget in  widgets_dashboard %}
+    {{widget.get_header}}
+  {% endfor %}
+{% endblock %}
+
+{% block main-content %}
+  <div class="row">
+    {% for widget in  widgets_dashboard %}
+      <div class="{% if forloop.counter|divisibleby:2 %} clearfix {% endif %}">
+        <div class="col-lg-6 col-md-6">
+          {{widget.get_body}}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

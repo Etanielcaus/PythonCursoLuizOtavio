@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load i18n gravatar plugins %}
+{% load static from staticfiles %}
+
+{% block html %}
+<html>
+  <head>
+  {% block head %}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    {% block metarobots %}
+      {% if ROBOTS_NOINDEX %}
+        <meta name="robots" content="noindex, nofollow" />
+      {% endif %}
+    {% endblock %}
+
+    <title>{%block title %}{% block pagetitle %}Colab{% endblock %} - Colab {% endblock %}</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/fav.ico' %}">
+
+    <link rel="stylesheet" href="{% static 'third-party/bootstrap/css/bootstrap.min.css' %}" type="text/css" media="screen, projection" />
+
+    <link rel="stylesheet"
+          href="{% static 'third-party/font-awesome/css/font-awesome.min.css' %}"
+          type="text/css" media="screen" />
+
+    {% if ribbon %}
+    <!-- Fork me Ribbons -->
+    <link rel="stylesheet" href="{% static 'third-party/ribbon/gh-fork-ribbon.css' %}">
+    <!--[if lt IE 9]>
+      <link rel="stylesheet" href="{% static 'third-party/ribbon/gh-fork-ribbon.ie.css' %}">
+    <![endif]-->
+    {% endif %}
+
+    {% block jquery_js%}
+        <!-- JQuery 2+ won't work for IE < 9 -->
+        <script type="text/javascript" src="{% static 'third-party/jquery-2.0.3.min.js' %}"></script>
+    {% endblock %}
+    {% block bootstrap_js%}
+        <script type="text/javascript" src="{% static 'third-party/bootstrap/js/bootstrap.min.js' %}"></script>
+    {% endblock%}
+    <script type="text/javascript" src="{% static 'third-party/jquery.debouncedresize.js' %}"></script>
+    <script type="text/javascript" src="{% static 'third-party/jquery.cookie.js' %}"></script>
+
+
+    {% include "includes/google_analytics.html" %}
+
+    {% block head_js %}{% endblock %}
+    {% block head_css %}{% endblock %}
+
+    <link rel="stylesheet" href="{% static 'css/screen.css' %}"
+        type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="{% static 'css/header.css' %}"
+        type="text/css" media="screen" />
+
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}"
+        type="text/css" media="screen" />
+  {% endblock %}
+  </head>
+
+  <!-- data-no-turbolink will disable Rails TurboLinks for all pages under Colab -->
+  <body data-no-turbolink>
+
+    {% block ribbon %}
+    {% if ribbon %}
+    <div class="github-fork-ribbon-wrapper left-bottom">
+      <div class="github-fork-ribbon">
+        <a href="{{ ribbon.url }}">{{ ribbon.text }}</a>
+      </div>
+    </div>
+    {% endif %}
+    {% endblock %}
+
+    {% block header %}
+        {% include 'header.html' %}
+    {% endblock %}
+
+      {% block messages %}
+        {% if request.GET.bid_login_failed %}
+          <div class="alert alert-dismissable alert-danger">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {% trans 'The login has failed. Please, try again.' %}
+          </div>
+        {% endif %}
+
+        {% for message in messages %}
+          <div class="alert alert-dismissable {{ message.tags }}">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+          </div>
+        {% endfor %}
+        <div id="alert-js" class="alert alert-dismissable alert-warning" hidden>
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <span id="alert-message"></span>
+        </div>
+      {% endblock %}
+
+    <div id="main-content" class="container">
+      {% block main-content %}{% endblock %}
+    </div>
+
+    {% block footer %}
+
+      {% include "footer.html" %}
+
+    {% endblock %}
+
+  {% include "tz/set_utc_offset.html" %}
+
+  {% block footer_js %}{% endblock %}
+  </body>
+</html>
+{% endblock %}

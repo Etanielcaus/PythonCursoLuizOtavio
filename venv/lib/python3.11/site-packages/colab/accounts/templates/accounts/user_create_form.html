@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block main-content %}
+
+<h2>{% trans "Sign up" %}</h2>
+
+<div class="row">
+  {% if form.errors %}
+  <div class="alert alert-danger">
+    <b>{% trans "Please correct the errors below and try again." %}</b>
+  </div>
+  {% endif %}
+</div>
+
+
+<p class="required">
+  <label>{% trans "Required fields" %}</label>
+</p>
+
+<form action="{% url "signup" %}" method="post" role="form" class="form-horizontal signup">
+  {% csrf_token %}
+
+  <div class="row">
+
+    <div>
+      <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12" style="display: inline-block; vertical-align:top;">
+        <div class="well">
+          <fieldset>
+            <legend>{% trans 'Personal Information' %}</legend>
+            {% for field in user_form %}
+              <div class="form-group{% if field.field.required %} required{% endif %}{% if field.errors %} alert alert-danger has-error{% endif %}">
+                <label for="{{ field.name }}" class="control-label">
+                  {{ field.label }}
+                </label>
+                {{ field }}
+                {{ field.errors }}
+              </div>
+            {% endfor %}
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12" style="display: inline-block; vertical-align:top;">
+        <div class="well">
+          <fieldset>
+            <legend>{% trans 'Subscribe to groups' %}</legend>
+            {% for choice in lists_form.lists %}
+              <div class="checkbox">{{ choice }}</div>
+            {% endfor %}
+            {{ lists_form.errors }}
+          </fieldset>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="submit">
+      <input type="submit" value="{% trans 'Register' %}" class="btn btn-primary btn-lg btn-block">
+    </div>
+  </div>
+
+</form>
+
+{% endblock %}

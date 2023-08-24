@@ -1,0 +1,2 @@
+[console_scripts]
+colab-admin = colab.utils.runner:execute_from_command_line

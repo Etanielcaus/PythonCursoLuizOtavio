@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load i18n tz highlight superarchives search_preview_templates %}
+{% load static from staticfiles %}
+
+{% block pagetitle %}{% trans 'search'|title %}{% endblock %}
+
+{% block head_js %}
+<script type="text/javascript" src="{% static 'third-party/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+{% if use_language %}
+{% comment %}
+We must use STATIC_URL because we have a language composing the URL
+    and the static template tag don't know how to use it. #}
+{% endcomment %}
+  <script type="text/javascript" src="{{ STATIC_URL }}third-party/bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.{{ use_language }}.js"></script>
+{% endif %}
+
+<script type="text/javascript">
+  $(function () {
+
+    $('#datepicker_since, #datepicker_until').datetimepicker({
+      pickTime: false,
+      {% if use_language and date_format %}
+        language: '{{ use_language }}',
+        format: '{{ date_format }}',
+      {% endif %}
+    });
+
+  });
+</script>
+{% endblock %}
+
+{% block head_css %}
+<link rel="stylesheet" href="{% static 'third-party/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css' %}"/>
+{% endblock %}
+
+{% block main-content %}
+  <div class="row">
+    <div class="col-xs-6 col-sm-4 col-md-2 col-lg-2">
+      <h2>{% trans "Search" %}</h2>
+    </div>
+    <div class="col-xs-6 col-sm-8 col-md-10 col-lg-10">
+      <br/><br/>
+      <p class="text-right quiet">
+        {{ page.paginator.count }} {% trans "documents found" %}
+      </p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="row">
+
+    <form class="col-xs-12 col-sm-12 hidden-md hidden-lg" action="{% url "haystack_search" %}">
+      <div class="input-group">
+        <input type="text" class="form-control" name="q" placeholder="{% trans "Search here" %}"
+         {% if request.GET.q %}value="{{ request.GET.q }}"{% endif %} />
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div>
+      </div>
+    </form>
+    <br />
+
+    <div id="filters" class="hidden-xs hidden-sm col-md-2 col-lg-2">
+      <h3>{% trans "Filters" %}</h3>
+      {% include "search/includes/search_filters.html" %}
+    </div>
+    <div class="col-md-10 col-lg-10">
+      <ul class="list-unstyled">
+      {% for result in page.object_list  %}
+        {% get_search_preview_templates result  as template_target %}
+        {% include template_target %}
+      {% empty %}
+        <li class="text-center">
+          {% trans "No results for your search." %}
+          {% if request.GET.q %}
+            <p class="text-muted">{% trans "You are searching for" %} {{ request.GET.q }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+
+      {% if page.has_other_pages %}
+        <div class="text-center">
+          <ul class="pagination">
+            <li {% if page.number == 1 %}class="disabled"{% endif %}>
+              <a href="{% if page.number == 1 %}javascript:void(0);{% else %}{% append_to_get page=1 %}{% endif %}"><span class="glyphicon glyphicon-chevron-left small-icon"></span><span class="glyphicon glyphicon-chevron-left small-icon"></span></a>
+            </li>
+            <li {% if not page.has_previous %}class="disabled"{% endif %}>
+              <a href="{% if page.has_previous %}{% append_to_get page=page.previous_page_number %}{% else %}javascript:void(0);{% endif %}"><span class="glyphicon glyphicon-chevron-left small-icon"></span></a>
+            </li>
+
+            {% if page.has_previous %}
+              {% if page.previous_page_number > 1 %}
+                <li>
+                  <a href="{% append_to_get page=page.previous_page_number|add:-1 %}">{{ page.number|add:-2 }}</a>
+                </li>
+              {% endif %}
+              <li>
+                <a href="{% append_to_get page=page.previous_page_number %}">{{ page.number|add:-1 }}</a>
+              </li>
+            {% endif %}
+
+            <li class="active">
+              <a href="javascript:void(0);">{{ page.number }}</a>
+            </li>
+
+            {% if page.has_next %}
+              <li>
+                <a href="{% append_to_get page=page.next_page_number %}">{{ page.number|add:1 }}</a>
+              </li>
+              {% if page.next_page_number < page.paginator.num_pages %}
+                <li>
+                  <a href="{% append_to_get page=page.next_page_number|add:1 %}">{{ page.number|add:2 }}</a>
+                </li>
+              {% endif %}
+            {% endif %}
+
+            <li {% if not page.has_next %}class="disabled"{% endif %}>
+              <a href="{% if page.has_next %}{% append_to_get page=page.next_page_number %}{% else %}javascript:void(0);{% endif %}"><span class="glyphicon glyphicon-chevron-right small-icon"></span></a>
+            </li>
+
+            <li {% if page.number == page.paginator.num_pages %}class="disabled"{% endif %}>
+              <a href="{% if page.number == page.paginator.num_pages %}javascript:void(0);{% else %}{% append_to_get page=page.paginator.num_pages %}{% endif %}"><span class="glyphicon glyphicon-chevron-right small-icon"></span><span class="glyphicon glyphicon-chevron-right small-icon"></span></a>
+            </li>
+
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+{% endblock %}

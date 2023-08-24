@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% load i18n gravatar widgets_tag  %}
+
+{% block html %}
+   {% import_widgets 'button' %}
+   {% import_widgets 'list' %}
+   {% import_widgets 'group' %}
+   {% import_widgets 'charts' %}
+   {{ block.super }}
+{% endblock %}
+
+{% block pagetitle %}Perfil{% endblock %}
+
+{% block head_js %}
+  {% for widget in widgets_charts %}
+      {{widget.get_header}}
+  {% endfor %}
+{% endblock %}
+
+{% block main-content %}
+
+  <div id="user-profile" class="row">
+    <div class="colab-vcard col-lg-4 col-md-4 col-sm-5">
+      <div class="thumbnail">
+        {% gravatar user_.email 200 %}
+      </div>
+
+      <h1>
+        <span>{{ user_.get_full_name }}</span>
+        <em>{{ user_.username }}</em>
+      </h1>
+
+      {% if request.user == user_ or request.user.is_superuser %}
+        <a class="btn btn-info" href="{% url 'user_profile_update' user_ %}"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;{% trans "edit profile"|title %}</a>
+        {% for widget in widgets_button %}
+            {{widget.get_body}}
+        {% endfor%}
+      {% endif %}
+      {% if request.user.is_active %}
+        {% if user_.bio %}
+          <div class="divider"></div>
+          <ul class="unstyled-list">
+            <li>
+              <strong>{% trans 'Bio' %}</strong>
+            </li>
+            <li class="text-muted"> {{ user_.bio }}</li>
+          </ul>
+        {% endif %}
+      {% endif %}
+
+      <div class="divider"></div>
+      {% if request.user.is_active %}
+        <ul class="unstyled-list">
+          <li><span class="icon-envelope icon-fixed-width"></span> <a href="mailto:{{ user_.email }}">{{ user_.email }}</a></li>
+        </ul>
+        <div class="divider"></div>
+      {% endif %}
+
+      <ul class="unstyled-list">
+        {% if user_.institution or user_.role %}
+          <li>
+            <span class="icon-briefcase icon-fixed-width"></span>
+            {{ user_.role }}
+            {% if user_.institution and user_.role %}-{% endif %}
+            {{ user_.institution }}
+          </li>
+        {% endif %}
+        {% if request.user.is_active %}
+          {% if SOCIAL_NETWORK_ENABLED %}
+            <li>
+              {% if user_.twitter %}
+                <span class="icon-twitter icon-fixed-width" title="{% trans 'Twitter account' %}"></span> <a target="_blank" href="{{ user_.twitter_link }}" title="{% trans 'Twitter account' %}">{{ user_.twitter }}</a>
+              {% endif %}
+              {% if user_.facebook %}
+                <span class="icon-facebook icon-fixed-width" title="{% trans 'Facebook account' %}"></span> <a target="_blank" href="{{ user_.facebook_link }}" title="{% trans 'Facebook account' %}">{{ user_.facebook }}</a>
+              {% endif %}
+            </li>
+
+            {% if user_.google_talk %}
+              <li><span class="icon-google-plus icon-fixed-width" title="{% trans 'Google talk account' %}"></span> {{ user_.google_talk }}</li>
+            {% endif %}
+
+            {% if user_.github %}
+              <li><span class="icon-github icon-fixed-width" title="{% trans 'Github account' %}"></span> <a target="_blank" href="https://github.com/{{ user_.github }}">{{ user_.github }}</a></li>
+            {% endif %}
+
+            {% if user_.webpage %}
+              <li><span class="icon-link icon-fixed-width" title="{% trans 'Personal webpage' %}"></span> <a target="_blank" href="{{ user_.webpage }}" title="{% trans 'Personal webpage' %}">{{ user_.webpage }}</a></li>
+            {% endif %}
+          {% endif %}
+        {% endif %}
+      </ul>
+      {% for widget in widgets_group %}
+          {{widget.get_body}}
+      {% endfor%}
+
+      <div class="divider"></div>
+
+    </div>
+
+    {% for widget in widgets_charts %}
+      {{widget.get_body}}
+    {% endfor %}
+
+  </div> <!-- End of user-profile row -->
+
+  <div class="row">
+    {% for widget in widgets_list %}
+        {{widget.get_body}}
+    {% endfor%}
+  </div>
+
+{% endblock %}

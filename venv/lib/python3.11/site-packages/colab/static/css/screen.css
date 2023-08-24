@@ -1,0 +1,297 @@
+
+body {
+    padding-top: 57px;
+}
+
+li hr {
+    margin: 10px 0;
+}
+
+/* From message-preview.html*/
+.quiet {
+    color: #999;
+    font-size: 85%;
+}
+
+.preview-message {
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 25px;
+    border-bottom: solid 1px #ddd;
+}
+
+.preview-message a {
+    text-decoration: none;
+}
+
+.preview-message img {
+    margin-right: 5px;
+}
+
+.subject,
+.subject a {
+    color: #000;
+}
+
+.subject a:hover,
+.subject a:focus {
+    text-decoration: underline;
+    color: #335;
+}
+
+.subject img {
+    margin-right: 5px;
+}
+
+/* message-list (ul wrapping preview-message) */
+
+ul.message-list {
+   padding: 0;
+}
+
+ul.message-list li {
+    list-style: none;
+}
+
+/* End of message-preview.html */
+
+
+/* Forms */
+.required label:before {
+    color: #f00;
+    content: "* ";
+}
+
+form.signup .form-group {
+    width: 90%;
+    margin-left: 0.5em;
+}
+
+div.links-group {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+div.submit {
+    margin: auto;
+    margin-bottom: 2em;
+    width: 200px;
+}
+
+.checkbox ul {
+    list-style: none;
+    padding: 0;
+}
+
+.checkbox ul li {
+    line-height: 1.6;
+}
+
+/* End Forms */
+
+
+/* User profile */
+
+.colab-vcard {
+    min-height: 400px;
+}
+
+.colab-vcard .thumbnail {
+    width: 200px;
+    height: 200px;
+}
+
+.colab-vcard h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    line-height: 33px;
+    letter-spacing: -1px;
+}
+
+.colab-vcard h1 span,
+.colab-vcard h1 em {
+    display: inline-block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    padding: 0;
+    vertical-align: bottom;
+}
+
+.colab-vcard h1 em {
+    font-weight: 300;
+    font-size: 20px;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.colab-vcard .divider {
+    border-bottom: 1px solid #EEE;
+    margin-top: 10px;
+}
+
+
+/* end of User profile */
+
+
+.rss-icon {
+    background-image: url(../img/rss.png);
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-left: 3px;
+}
+
+.column-align {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#filters h4 {
+    margin-top: 25px;
+}
+
+ul.unstyled-list {
+    list-style-type: none;
+    padding: 3px 0;
+    margin: 10px 0;
+}
+
+ul.unstyled-list li {
+    min-height: 27px;
+}
+
+ul.unstyled-list .glyphicon-chevron-right {
+    font-size: 85%;
+}
+
+#avatar {
+    background-color: #FFF;
+    padding: 9px 12px;
+    width: 47px;
+    height: 50px;
+}
+
+.blog-post-item .post-meta {
+    margin-bottom: 2em;
+}
+
+.blog-post-item .tags {
+    margin-top: 1em;
+}
+
+.reply.btn {
+    margin-left: 1em;
+}
+
+.email-message pre {
+    border: 0;
+    background-color: #fff;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.email-message .user-fullname {
+    vertical-align: middle;
+}
+
+.email-message .panel-heading img {
+    margin-right: 10px;
+}
+
+.email-message .panel-heading .date {
+    margin-right: 10px;
+}
+
+.email-message .panel-heading {
+    padding: 10px 0;
+}
+
+.selected .glyphicon-remove {
+    color: #f00;
+}
+
+.selected a {
+    color: #000;
+    font-weight: bold;
+}
+
+.toggle-reply {
+    height: 10px;
+    line-height: 3px;
+    padding: 0px 5px 14px;
+    vertical-align: middle;
+    font-size: 20px;
+    background-color: #bbb;
+    border-color: #aaa;
+}
+
+.toggle-reply:hover,
+.toggle-reply:focus {
+    background-color: #aaa;
+    border-color: #999;
+}
+
+/* user profile update */
+
+.btn.delete-email:not(:hover) {
+    background-color: #fff;
+    color: #D9534F;
+}
+
+.btn .icon-warning-sign {
+    color: #F0AD4E;
+}
+
+ul.emails {
+    margin: 0;
+}
+
+/* end user profile update */
+
+/* search highlighting */
+span.highlighted {
+    background-color: yellow;
+}
+
+/* paginator icon */
+.small-icon {
+    font-size: 10px;
+}
+
+/* Subscribe list */
+.colab-vcard .label {
+    line-height: 2;
+}
+
+/* Message link */
+
+.div-message-link {
+    display: inline !important;
+}
+
+.message-link {
+    margin-left: 15px;
+}
+
+.email-message .popover {
+    max-width: 350px;
+    width: 350px;
+}
+
+/* Chart div */
+.chart {
+    text-align: center;
+}
+
+.chart > canvas {
+    width: 250px;
+}
+
+.chart > p {
+    text-align: center;
+    line-height: 1.5em;
+}
+.chart > p > label {
+    margin: 0 2px;
+}
