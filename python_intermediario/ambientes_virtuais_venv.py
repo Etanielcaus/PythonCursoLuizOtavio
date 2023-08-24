@@ -12,3 +12,4 @@
 # Para criar um ambiente virtual:
 # pyhton -m venv venv (cria o ambiente)
 # ➜ . venv/bin/activate (atiava o ambiente virtual)
+# deactivate (desativa o ambiente virtual)
