@@ -21,3 +21,4 @@ import pymysql
 print('oi')
 
 # requeriments.txt
+# ➜ pip freeze > requirements.txt
