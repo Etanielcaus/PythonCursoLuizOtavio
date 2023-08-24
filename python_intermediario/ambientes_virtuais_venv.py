@@ -15,3 +15,7 @@
 # deactivate (desativa o ambiente virtual)
 
 # instalar o pip
+import pymysql
+# pip install pymysql
+# pip uninstall pymysql -y
+print('oi')
