@@ -22,3 +22,4 @@ print('oi')
 
 # requeriments.txt
 # ➜ pip freeze > requirements.txt
+# pip instal -r .\requirements.txt
