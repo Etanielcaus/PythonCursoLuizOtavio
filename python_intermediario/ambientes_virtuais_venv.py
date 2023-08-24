@@ -19,3 +19,5 @@ import pymysql
 # pip install pymysql
 # pip uninstall pymysql -y
 print('oi')
+
+# requeriments.txt
