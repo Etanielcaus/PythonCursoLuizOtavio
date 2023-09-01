@@ -1,0 +1,5 @@
+2023-09-01 06:57:45,679 - DEBUG - Esta é uma mensagem de depuração
+2023-09-01 06:57:45,679 - INFO - Esta é uma mensagem informativa
+2023-09-01 06:57:45,679 - WARNING - Este é um aviso
+2023-09-01 06:57:45,679 - ERROR - Este é um erro
+2023-09-01 06:57:45,680 - CRITICAL - Este é um erro crítico
