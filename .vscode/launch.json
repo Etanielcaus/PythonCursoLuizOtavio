@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "MostraIdade",
+            "request": "launch",
+            "mainClass": "MostraIdade",
+            "projectName": "python estudos Otavio Miranda_b649536c"
+        },
+        {
             "name": "Python: Arquivo Atual",
             "type": "python",
             "request": "launch",
