@@ -16,6 +16,7 @@
 # valor = Classe.chave.value
 import enum
 
+
 def mover(direcao):
     print(f'Movendo para {direcao}')
 # Direcoes = enum.Enum('Direcoes', ['ESQUERDA', 'DIREITA'])
@@ -27,6 +28,8 @@ mover('acima')
 mover('abaixo')
 
 print('-' * 80)
+
+
 class Direcoes(enum.Enum):
     ESQUERDA = enum.auto()
     DIREITA = enum.auto()
