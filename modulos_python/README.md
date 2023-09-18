@@ -20,4 +20,8 @@ Aqui vai se estudar os seguintes módulos:
 > Mover, copiar e apagar arquivos (shutil.move, shutil.copy, os.unlink, shutil.rmtree)
 
 
-### 9 - JSON
+### 9 - JSON: JavaScript Object Notation
+> converter json para python strings(json.loads)
+> converter python para json strings(json.dumps)
+> tipagem de um dicionario(typing.TypedDict)
+> converter arquvivos(json.dump, json.load)
