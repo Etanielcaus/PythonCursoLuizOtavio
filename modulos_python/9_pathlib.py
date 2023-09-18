@@ -46,10 +46,25 @@ ideias = caminho_arquivo.parent / 'ideias'
 # arquivo.write_text('Olá mundo')  # Escrever dentro do arquivo
 # print(arquivo.read_text())  # Ler o que está dentro do arquivo
 # arquivo.unlink()  # Deletar arquivo
+area_de_trabalho = Path.home() / 'Área de Trabalho'
 
-caminho_arquivo = Path.home() / 'Área de Trabalho' / 'arquivo.txt'
-with caminho_arquivo.open('a+') as file:
-    file.write('Uma linha\n')
-    file.write('Outra linha\n')
+caminho_arquivo = (Path.home() /
+                   'Área de Trabalho' /
+                   'desenvolvimento' /
+                   'arquivo.txt')
 
-print(caminho_arquivo.read_text())
+print(caminho_arquivo)
+caminho_arquivo.touch()
+# with caminho_arquivo.open('a+') as file:
+#     file.write('Uma linha\n')
+#     file.write('Outra linha\n')
+
+# print(caminho_arquivo.read_text())
+
+caminho_pasta = Path.home() / 'Área de Trabalho' / 'pasta'
+caminho_pasta.mkdir(exist_ok=True)  # Criar pasta
+subpasta = caminho_pasta / 'subpasta'
+subpasta.mkdir(exist_ok=True)
+
+for item in area_de_trabalho.iterdir():
+    print(item.name)

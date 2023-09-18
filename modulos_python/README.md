@@ -33,4 +33,7 @@ Aqui vai se estudar os seguintes módulos:
 > escrever dentro do arquivo(write_text)
 > ler o que tem dentro do arquivo(read_text)
 > deletar arquivo (unlink())
+> criar pasta (mkdir)
+> deletar pasta (rmdir)
+> visualizar o que tem dentro da pasta (iterdir())
 
