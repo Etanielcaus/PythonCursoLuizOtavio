@@ -73,7 +73,7 @@ print(json_string)
 # ----------------------------------------------------------------------
 # json.dump e json.load com arquivos
 
-NOME_ARQUIVO = 'aula177.json'
+NOME_ARQUIVO = 'aula8_1.json'
 CAMINHO_ABSOLUTO_ARQUIVO = os.path.abspath(
     os.path.join(
         os.path.dirname(__file__),
