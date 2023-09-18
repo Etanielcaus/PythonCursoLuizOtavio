@@ -18,3 +18,6 @@ Aqui vai se estudar os seguintes módulos:
 > navegar em caminhos de forma recursiva(os.walk)
 > pegar informações sobre os arquivos (os.path.getsize, os.stat)
 > Mover, copiar e apagar arquivos (shutil.move, shutil.copy, os.unlink, shutil.rmtree)
+
+
+### 9 - JSON
