@@ -21,10 +21,16 @@ Aqui vai se estudar os seguintes módulos:
 
 
 ### 6 - JSON: JavaScript Object Notation
-> converter json para python strings(json.loads) /n
+> converter json para python strings(json.loads)
 > converter python para json strings(json.dumps)
 > tipagem de um dicionario(typing.TypedDict)
 > converter arquvivos(json.dump, json.load)
 
 ### 7 - pathlib: trabalhando com caminhos
+> pastas pai(parent)
+> caminho absoluto(absolute())
+> criar um arquivo e diretorio(Path, touch)
+> escrever dentro do arquivo(write_text)
+> ler o que tem dentro do arquivo(read_text)
+> deletar arquivo (unlink())
 
