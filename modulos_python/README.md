@@ -37,3 +37,8 @@ Aqui vai se estudar os seguintes módulos:
 > deletar pasta (rmdir)
 > visualizar o que tem dentro da pasta (iterdir())
 
+### 8 - csv: trabalhando com arquivos csv
+> ler um arquivo csv (reader)
+> ler um arquivo csv com delimitador (delimiter)
+> ler um arquivo csv com delimitador e cabeçalho (DictReader)
+> escrever um arquivo csv (writer, DictWriter)
