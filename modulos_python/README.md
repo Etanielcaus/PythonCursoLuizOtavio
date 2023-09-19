@@ -42,3 +42,8 @@ Aqui vai se estudar os seguintes módulos:
 > ler um arquivo csv com delimitador (delimiter)
 > ler um arquivo csv com delimitador e cabeçalho (DictReader)
 > escrever um arquivo csv (writer, DictWriter)
+
+### 9 - random: trabalhando com números aleatórios
+> escolher um número aleatório (random.randint())
+> escolher um número aleatório de uma lista (random.choice())
+> embaralhar uma lista (random.shuffle())
