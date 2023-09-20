@@ -1,0 +1,9 @@
+Crie um ambiente virtual: Se você ainda não criou um ambiente virtual para o 
+seu projeto, crie um. Você pode usar o módulo venv para isso. Abra um terminal 
+no diretório do seu projeto e execute o seguinte comando:
+
+python -m venv venv
+Isso criará um ambiente virtual chamado "venv" no diretório atual.
+
+Ative o ambiente virtual: Ative o ambiente virtual com o seguinte comando:
+source venv/bin/activate
