@@ -70,6 +70,8 @@ filme: Movie = json.loads(string_json)
 json_string = json.dumps(filme, ensure_ascii=False, indent=2)
 print(json_string)
 
+print('-' * 80)
+
 # ----------------------------------------------------------------------
 # json.dump e json.load com arquivos
 

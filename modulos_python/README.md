@@ -47,3 +47,17 @@ Aqui vai se estudar os seguintes módulos:
 > escolher um número aleatório (random.randint())
 > escolher um número aleatório de uma lista (random.choice())
 > embaralhar uma lista (random.shuffle())
+
+### 10 - string Template: templates para strings
+> substituir uma string por outra (substitute())
+> substituir uma string por outra com dicionario (substitute())
+
+### 11 - Varíaveis de ambientes
+> pegar variáveis de ambiente (os.environ)
+> pegar a home do usuário (os.environ['HOME'])
+> pegar o usuário (os.getlogin())
+> pegar o caminho do diretório atual (os.getcwd())
+> pegar o caminho do diretório atual (os.path.abspath('.'))
+> pegar o caminho do diretório atual (pathlib.Path.cwd())
+> pegar o caminho do diretório atual (pathlib.Path.home())
+
