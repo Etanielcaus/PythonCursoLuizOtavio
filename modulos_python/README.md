@@ -72,3 +72,9 @@ Aqui vai se estudar os seguintes módulos:
 ### 13 - ZIP: compactar e descompactar arquivos
 > compactar arquivos (zipfile.ZipFile)
 > descompactar arquivos (extractall())
+
+### 14 - SYS.argv: argumentos de linha de comando
+> receber argumentos de linha de comando (sys.argv)
+
+### 15 - argparse.ArgumentParser: argumentos complexos de linha de comando
+> receber argumentos complexos de linha de comando (argparse.ArgumentParser)
