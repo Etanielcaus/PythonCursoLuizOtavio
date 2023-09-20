@@ -61,3 +61,14 @@ Aqui vai se estudar os seguintes módulos:
 > pegar o caminho do diretório atual (pathlib.Path.cwd())
 > pegar o caminho do diretório atual (pathlib.Path.home())
 
+### 12 - SMTP: protocolo de envio de e-mail
+> configurar servidor de e-mail (smtplib.SMTP)
+> configurar servidor de e-mail com ssl (smtplib.SMTP_SSL)
+> configurar servidor de e-mail com ssl (smtplib.SMTP_SSL)
+> configurar servidor de e-mail com ssl (smtplib.SMTP_SSL)
+> enviar e-mail (sendmail)
+> fechar conexão (quit)
+
+### 13 - ZIP: compactar e descompactar arquivos
+> compactar arquivos (zipfile.ZipFile)
+> descompactar arquivos (extractall())
