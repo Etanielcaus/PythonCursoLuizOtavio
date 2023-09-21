@@ -17,3 +17,17 @@
 # https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 # - Os cabeçalhos HTTP (Content-Type, Accept)
 # - O corpo da mensagem (Pode estar em vazio em alguns casos)
+# para localhost:
+# venv/bin/python -m http.server -d modulos_python/aula18_site/ 3333
+import requests
+
+# http:// rodando na porta 80
+# https:// rodando na porta 443
+url = 'http://localhost:3333/'
+response = requests.get(url)
+
+# print(response.status_code)
+print(response.headers)
+# print(response.content)
+# print(response.json())
+# print(response.text)
