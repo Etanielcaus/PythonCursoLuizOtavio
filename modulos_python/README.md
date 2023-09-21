@@ -78,3 +78,12 @@ Aqui vai se estudar os seguintes módulos:
 
 ### 15 - argparse.ArgumentParser: argumentos complexos de linha de comando
 > receber argumentos complexos de linha de comando (argparse.ArgumentParser)
+
+### 16 - requests: trabalhando com requisições HTTP
+> fazer uma requisição com requests (requests.get)
+> fazer uma requisição com requests (requests.post)
+> fazer uma requisição com requests (requests.put)
+> fazer uma requisição com requests (requests.delete)
+> fazer uma requisição com requests (requests.patch)
+> fazer uma requisição com requests (requests.head)
+> fazer uma requisição com requests (requests.options)
