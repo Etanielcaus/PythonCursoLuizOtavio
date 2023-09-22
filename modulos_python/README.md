@@ -96,3 +96,13 @@ Aqui vai se estudar os seguintes módulos:
 > pegar dados de um site (requests.patch)
 > pegar dados de um site (requests.head)
 > pegar dados de um site (requests.options)
+
+### 18 - selenium: automatizar ações no navegador
+> automatizar ações no navegador (webdriver.Firefox)
+> automatizar ações no navegador (webdriver.Chrome)
+> automatizar ações no navegador (webdriver.Edge)
+> automatizar ações no navegador (webdriver.Safari)
+> automatizar ações no navegador (webdriver.Opera)
+> automatizar ações no navegador (webdriver.PhantomJS)
+> automatizar ações no navegador (webdriver.Ie)
+> automatizar ações no navegador (webdriver.Remote)
