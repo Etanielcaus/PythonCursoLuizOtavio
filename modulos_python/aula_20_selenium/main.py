@@ -46,3 +46,5 @@ if __name__ == '__main__':
 
     # Dorme por 10 segundos
     sleep(10)
+
+    print('teste')
