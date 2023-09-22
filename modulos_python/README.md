@@ -87,3 +87,12 @@ Aqui vai se estudar os seguintes módulos:
 > fazer uma requisição com requests (requests.patch)
 > fazer uma requisição com requests (requests.head)
 > fazer uma requisição com requests (requests.options)
+
+### 17 - webscraping: pegar dados de um site
+> pegar dados de um site (requests.get)
+> pegar dados de um site (requests.post)
+> pegar dados de um site (requests.put)
+> pegar dados de um site (requests.delete)
+> pegar dados de um site (requests.patch)
+> pegar dados de um site (requests.head)
+> pegar dados de um site (requests.options)
