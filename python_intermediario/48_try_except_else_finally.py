@@ -6,5 +6,5 @@ except ZeroDivisionError:
     print('Dividiu Zero')
 else:
     print('Não deu erro')
-finally: # Sempre será executado, mesmo se ocorra um error
+finally:  # Sempre será executado, mesmo se ocorra um error
     print('Fechar arquivo')
