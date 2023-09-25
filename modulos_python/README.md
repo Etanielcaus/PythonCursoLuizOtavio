@@ -106,3 +106,7 @@ Aqui vai se estudar os seguintes módulos:
 > automatizar ações no navegador (webdriver.PhantomJS)
 > automatizar ações no navegador (webdriver.Ie)
 > automatizar ações no navegador (webdriver.Remote)
+
+### 19 - subprocess: executar processos do sistema
+> executar processos do sistema (subprocess.run)
+> executar processos do sistema (subprocess.Popen)
