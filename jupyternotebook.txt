@@ -1,0 +1,5 @@
+Para instalar:
+pip install notebook
+
+Para criar um notebook:
+jupyter notebook
