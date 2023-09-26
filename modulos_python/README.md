@@ -110,3 +110,8 @@ Aqui vai se estudar os seguintes módulos:
 ### 19 - subprocess: executar processos do sistema
 > executar processos do sistema (subprocess.run)
 > executar processos do sistema (subprocess.Popen)
+
+### 20 - jupyter notebook: trabalhando com notebooks
+
+### 21 - threading: trabalhando com threads
+> trabalhando com threads (threading.Thread)
