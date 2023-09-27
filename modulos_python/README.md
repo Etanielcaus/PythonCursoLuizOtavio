@@ -115,3 +115,5 @@ Aqui vai se estudar os seguintes módulos:
 
 ### 21 - threading: trabalhando com threads
 > trabalhando com threads (threading.Thread)
+
+### 22 - PyPDF2: trabalhando com pdfs
